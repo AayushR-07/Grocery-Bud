@@ -1,11 +1,14 @@
-function createItems(itemsArray) {
-    var $container = $('<div class="items"></div>');
+import { createSingleItem } from "./single-item.js";
 
-    $.each(itemsArray,function (index,item){
+//Creates Item container ...
+export function createItems(itemsArray) {
+  const container = document.createElement("div");
+  container.className = "items";
 
-        var $itemElement = createSingleItem(item);
-        $container.append($itemElement);
-    });
+  itemsArray.forEach((item) => {
+    const itemElement = createSingleItem(item);
+    container.appendChild(itemElement);
+  });
 
-    return $container;
+  return container;
 }

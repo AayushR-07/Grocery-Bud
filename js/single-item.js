@@ -1,11 +1,13 @@
-// Create SingleItem Element
-//updated
-function createSingleItem(item) {
+import { editCompleted, removeItem, setEditId } from "./app.js";
+
+export function createSingleItem(item) {
   
+  // Create SingleItem Element
+
    const div = document.createElement("div");
   div.className = "single-item";
 
-  $div.innerHTML =`
+  div.innerHTML =`
     <input type="checkbox" ${item.completed ? "checked" : ""} />
     <p style="text-decoration: ${item.completed ? "line-through" : "none"}">
       ${item.name}
@@ -18,20 +20,16 @@ function createSingleItem(item) {
     </button>
   `;
 
-  //Add event listener for checkbox
+  // Add event listener for checkbox
   const checkbox = div.querySelector('input[type="checkbox"]');
-  checkbox.addEventListener("change",() => editCompleted(item.id));
+  checkbox.addEventListener("change", () => editCompleted(item.id));
 
+  // Add event listener for remove button
+  const removeBtn = div.querySelector(".remove-btn");
+  removeBtn.addEventListener("click", () => removeItem(item.id));
 
-  //Add event listener for remove button
-    const removeBtn = div.querySelector('.remove-btn');
-  checkbox.addEventListener("click",() => editCompleted(item.id));
-
-
-  //Add event listener for edit button
-    const editBtn = div.querySelector('.edit-btn');
-  checkbox.addEventListener("click",() => editCompleted(item.id));
-  
-  return $div;
+  // Add event listener for edit button
+  const editBtn = div.querySelector(".edit-btn");
+  editBtn.addEventListener("click", () => setEditId(item.id));
+  return div;
 }
-
