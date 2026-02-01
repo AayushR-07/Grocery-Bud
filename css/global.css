@@ -1,3 +1,23 @@
+:root {
+  --primary: #10b981;   /* emerald */
+  --primary-dark: #059669;
+
+  --accent: #6366f1;    /* indigo */
+  --accent-dark: #4f46e5;
+
+  --danger: #ef4444;
+  --danger-dark: #dc2626;
+
+  --bg-card: #f9fafb;
+  --bg-item: #ffffff;
+
+  --text-main: #0f172a;
+  --text-muted: #6b7280;
+
+  --border-soft: #e5e7eb;
+}
+
+
 *,
 ::after,
 ::before {
@@ -6,20 +26,96 @@
     box-sizing: border-box;
 }
 
-body{
-    background: #eee;
-    font-family:  Helvetica, sans-serif;
-    font-weight: 400;
-    line-height: 1.2;
-    color: #222;
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+
+  color: var(--text-main);
+}
+
+
+
+
+
+body {
+  min-height: 100vh;
+  font-family: Helvetica, sans-serif;
+
+  /* background image */
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("../images/background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .section-center {
-    margin-top: 0 auto;
-    margin-top: 8rem;
-    max-width: 30rem;
-    background: #fff;
-    border-radius: 0.25rem;
-  padding: 2rem;
-  position: relative;
+  width: 100%;
+  max-width: 36rem;
+
+  background: linear-gradient(180deg, #ffffff, var(--bg-card));
+  padding: 3rem;
+
+  border-radius: 1.25rem;
+  border: 1px solid var(--border-soft);
+
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+
+.btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #43a047;
 }

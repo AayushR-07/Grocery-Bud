@@ -1,13 +1,38 @@
 .single-item {
+  background:  var(--bg-item);
+  padding: 0.9rem 1.2rem;
+
+  border-radius: 0.9rem;
+  border: 1px solid var(--border-soft);
+
   display: grid;
   grid-template-columns: auto 1fr auto auto;
-  column-gap: 1rem;
   align-items: center;
+  column-gap: 1rem;
+
+  transition: all 0.25s ease;
 }
 
-.single-item p {
-  text-transform: capitalize;
+.single-item:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
 }
+
+
+.single-item input:checked + p {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+
+
+
+.single-item p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);;
+}
+
 
 .single-item input[type="checkbox"] {
   cursor: pointer;
@@ -16,23 +41,25 @@
 }
 
 .single-item .btn {
-  cursor: pointer;
-  color: #fff;
+  padding: 0.4rem 0.55rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
   background: #06b6d4;
-  border: transparent;
-  border-radius: 0.25rem;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  transition: all 0.2s ease;
 }
+
 
 .single-item .btn:hover {
-  background: #0e7490;
+  background: var(--accent-dark);
 }
 
+
+
 .single-item .remove-btn {
-  background: #222;
+  background: var(--danger);
 }
 
 .single-item .remove-btn:hover {
-  background: #900e0e;
+  background: var(--danger-dark);
 }
+
