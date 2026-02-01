@@ -7,27 +7,21 @@ form h2 {
 
 .form-control {
   display: flex;
-  align-items: stretch;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
-
 
 
 .form-input {
   flex: 1;
-  height: 48px;
-
-  padding: 0 1rem;
+  padding: 0.6rem 0.9rem;
   font-size: 1rem;
 
-  border: 1px solid #d1d5db;
+  border: 1px solid #cbd5e1;
   border-right: none;
 
-  border-radius: 0.75rem 0 0 0.75rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 }
-
-
-
 
 
 .form-input::placeholder {
@@ -35,29 +29,19 @@ form h2 {
 }
 
 .form-control .btn {
-  height: 48px;
-  width: 130px;
-
-  padding: 0;
-  font-size: 1rem;
-  line-height: 1;
-
+  width: 120px;
   background: linear-gradient(135deg, #06b6d4, #0e7490);
-  color: #fff;
+  border: none;
 
-  border-radius: 0 0.6rem 0.6rem 0;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+
   font-weight: 600;
-
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
-
 
 
 .form-control .btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 25px rgba(6, 182, 212, 0.4);
-}
-
-.form-control .btn:active {
-  transform: scale(0.97);
+  box-shadow: 0 6px 15px rgba(6, 182, 212, 0.4);
 }
